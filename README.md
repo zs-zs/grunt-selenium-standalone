@@ -1,4 +1,4 @@
-# grunt-selenium_standalone
+# grunt-selenium-standalone
 
 > Grunt tasks for running a standalone Selenium server using the popular selenium-standalone package
 
