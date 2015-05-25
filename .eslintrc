@@ -1,0 +1,23 @@
+{
+    "env": {
+        "node": true
+    },
+    "ecmaFeatures": {
+        "blockBindings": true,
+        "forOf": true,
+        "jsx": false
+    },
+    "rules": {
+        "semi": 2,
+        "no-unused-vars": [1, {"args":"none"}],
+        "quotes": [2, "single"],
+        "no-use-before-define": 2,
+        "indent": [2, "tab"],
+        "linebreak-style": [1, "windows"],
+        "no-mixed-spaces-and-tabs": [2, "smart-tabs"],
+        "camelcase": [2, {"properties": "never"}],
+        "no-trailing-spaces": [1, { "skipBlankLines": true }],
+        "eol-last": false,
+        "no-empty": [0]
+    }
+}

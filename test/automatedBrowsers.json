@@ -1,0 +1,26 @@
+{
+	"chrome": {
+		"driver": {
+			"downloadURL": "http://chromedriver.storage.googleapis.com",
+			"config": {
+				"browserName": "chrome"
+			}
+		}
+	},
+	"phantomjs": {
+		"driver": {
+			"downloadURL": "http://selenium-release.storage.googleapis.com",
+			"config": {
+				"browserName": "phantomjs"
+			}
+		}
+	},
+	"explorer": {
+		"driver": {
+			"downloadURL": "http://selenium-release.storage.googleapis.com",
+			"config": {
+				"browserName": "internet explorer"
+			}
+		}
+	}
+}
