@@ -1,7 +1,7 @@
 {
   "name": "grunt-selenium-standalone",
   "description": "Grunt tasks for running a standalone Selenium server using the popular selenium-standalone package",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/zs-zs/grunt-selenium-standalone",
   "author": {
     "name": "zs-zs",
