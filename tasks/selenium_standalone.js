@@ -24,19 +24,20 @@ var withSeleniumContext = function(grunt, performTask) {
 	});
 
 	var done = this.async();
-	performTask.call(this, drivers).then(done, function(e) {
+	performTask.call(this, this.data).then(done, function(e) {
 		grunt.log.error(e);
 		done(false);
 	});
 };
 
 var start = function start(grunt) {
-	withSeleniumContext.call(this, grunt, function(drivers) {
+	withSeleniumContext.call(this, grunt, function(taskConfig) {
 		return q.denodeify(selenium.start)({
-			drivers: drivers,
+			drivers: taskConfig.drivers,
 			logger: function(message) {
 				grunt.log.debug(message);
-			}
+			},
+			spawnCb: taskConfig.spawnCb
 		}).then(function(seleniumProcess) {
 			seleniumChildProcess = seleniumProcess;
 			seleniumProcess.stderr.on('data', function(data) {
@@ -53,11 +54,11 @@ var stop = function stop(grunt) {
 };
 
 var install = function install(grunt) {
-	withSeleniumContext.call(this, grunt, function(drivers) {
+	withSeleniumContext.call(this, grunt, function(taskConfig) {
 		return q.denodeify(selenium.install)({
-			version: this.data.seleniumVersion,
-			baseURL: this.data.seleniumDownloadURL,
-			drivers: drivers,
+			version: taskConfig.seleniumVersion,
+			baseURL: taskConfig.seleniumDownloadURL,
+			drivers: taskConfig.drivers,
 			logger: function(message) {
 				grunt.log.debug(message);
 			},
