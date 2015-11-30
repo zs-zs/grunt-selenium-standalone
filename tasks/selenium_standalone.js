@@ -31,6 +31,7 @@ var withSeleniumContext = function(grunt, performTask) {
 };
 
 var start = function start(grunt) {
+    var that = this;
 	withSeleniumContext.call(this, grunt, function(drivers) {
 		return q.denodeify(selenium.start)({
             version: this.data.seleniumVersion,
@@ -43,14 +44,21 @@ var start = function start(grunt) {
 			seleniumProcess.stderr.on('data', function(data) {
 				grunt.log.debug(data.toString());
 			});
+            if (that.data.stopOnExit === true) {
+                process.on('exit', function () {
+                    stop.call(that, grunt);
+                });
+            }
 		});
 	});
 };
 
 var stop = function stop(grunt) {
-	grunt.log.debug('Killing Selenium server child process...');
-	seleniumChildProcess.kill();
-	grunt.log.debug('Selenium server killed.');
+    if (seleniumChildProcess.kill) {
+        grunt.log.debug('Killing Selenium server child process...');
+        seleniumChildProcess.kill();
+        grunt.log.debug('Selenium server killed.');
+    }
 };
 
 var install = function install(grunt) {
