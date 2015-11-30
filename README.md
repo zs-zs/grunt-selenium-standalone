@@ -40,7 +40,8 @@ grunt.initConfig({
                   arch: process.arch,
                   baseURL: 'http://selenium-release.storage.googleapis.com'
                 }
-            }
+            },
+            stopOnExit: true
         }
     }
 });
@@ -54,6 +55,10 @@ The supported command verbs are:
 - *install*: installs the web drivers which were specified for a given target
 - *start*: starts the selenium server
 - *stop*: stops the selenium server
+
+### stopOnExit
+
+For each target you can specify if the selenium server should stop automatically when the called grunt task completes or fails. The default is `false`.
 
 ## Contributing
 
