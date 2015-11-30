@@ -33,6 +33,7 @@ var withSeleniumContext = function(grunt, performTask) {
 var start = function start(grunt) {
 	withSeleniumContext.call(this, grunt, function(drivers) {
 		return q.denodeify(selenium.start)({
+            version: this.data.seleniumVersion,
 			drivers: drivers,
 			logger: function(message) {
 				grunt.log.debug(message);
