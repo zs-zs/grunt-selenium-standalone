@@ -25,28 +25,31 @@ In your project's Gruntfile, add a section named `selenium_standalone` to the da
 
 ```js
 grunt.initConfig({
-    'selenium_standalone': {
-        your_target: {
-            seleniumVersion: '2.45.0',
-            seleniumDownloadURL: 'http://selenium-release.storage.googleapis.com',
-            drivers: {
-                chrome: {
-                  version: '2.15',
-                  arch: process.arch,
-                  baseURL: 'http://chromedriver.storage.googleapis.com'
-                },
-                ie: {
-                  version: '2.45',
-                  arch: process.arch,
-                  baseURL: 'http://selenium-release.storage.googleapis.com'
-                }
-            }
-        }
+  selenium_standalone: {
+    options: {
+      stopOnExit: true
     }
+    your_target: {
+      seleniumVersion: '2.45.0',
+      seleniumDownloadURL: 'http://selenium-release.storage.googleapis.com',
+      drivers: {
+        chrome: {
+          version: '2.15',
+          arch: process.arch,
+          baseURL: 'http://chromedriver.storage.googleapis.com'
+        },
+        ie: {
+          version: '2.45',
+          arch: 'ia32',
+          baseURL: 'http://selenium-release.storage.googleapis.com'
+        }
+      }
+    }
+  }
 });
 ```
 
-### Command verbs
+### Command Verbs
 
 For each target of the task `selenium_standalone` you can issue multiple commands with command verbs.
 The supported command verbs are:
@@ -54,6 +57,13 @@ The supported command verbs are:
 - *install*: installs the web drivers which were specified for a given target
 - *start*: starts the selenium server
 - *stop*: stops the selenium server
+
+### Options
+
+#### `stopOnExit`
+
+For each target, you can specify if the selenium server should stop automatically when the executing Grunt task run completes or fails. The default is `false`.
+
 
 ## Contributing
 
