@@ -14,14 +14,14 @@ var selenium = require('selenium-standalone');
 var seleniumChildProcess;
 
 var withSeleniumContext = function(grunt, performTask) {
-	var driverArgs = this.data.drivers;
-	var drivers = Object.keys(driverArgs).map(function(driverName) {
-		return {
-			version: driverArgs[driverName].version,
-			arch: process.arch,
-			baseURL: driverArgs[driverName].downloadURL
-		};
-	});
+    var drivers = this.data.drivers || {};
+
+    if (!drivers.chrome) {
+        drivers.chrome = false;
+    }
+    if (!drivers.ie) {
+        drivers.ie = false;
+    }
 
 	var done = this.async();
 	performTask.call(this, drivers).then(done, function(e) {
