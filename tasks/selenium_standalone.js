@@ -14,14 +14,14 @@ var selenium = require('selenium-standalone');
 var seleniumChildProcess;
 
 var withSeleniumContext = function(grunt, performTask) {
-	var driverArgs = this.data.drivers;
-	var drivers = Object.keys(driverArgs).map(function(driverName) {
-		return {
-			version: driverArgs[driverName].version,
-			arch: process.arch,
-			baseURL: driverArgs[driverName].downloadURL
-		};
-	});
+    var drivers = this.data.drivers || {};
+
+    if (!drivers.chrome) {
+        drivers.chrome = false;
+    }
+    if (!drivers.ie) {
+        drivers.ie = false;
+    }
 
 	var done = this.async();
 	performTask.call(this, drivers).then(done, function(e) {
@@ -31,8 +31,10 @@ var withSeleniumContext = function(grunt, performTask) {
 };
 
 var start = function start(grunt) {
+    var that = this;
 	withSeleniumContext.call(this, grunt, function(drivers) {
 		return q.denodeify(selenium.start)({
+            version: this.data.seleniumVersion,
 			drivers: drivers,
 			logger: function(message) {
 				grunt.log.debug(message);
@@ -42,14 +44,21 @@ var start = function start(grunt) {
 			seleniumProcess.stderr.on('data', function(data) {
 				grunt.log.debug(data.toString());
 			});
+            if (that.data.stopOnExit === true) {
+                process.on('exit', function () {
+                    stop.call(that, grunt);
+                });
+            }
 		});
 	});
 };
 
 var stop = function stop(grunt) {
-	grunt.log.debug('Killing Selenium server child process...');
-	seleniumChildProcess.kill();
-	grunt.log.debug('Selenium server killed.');
+    if (seleniumChildProcess.kill) {
+        grunt.log.debug('Killing Selenium server child process...');
+        seleniumChildProcess.kill();
+        grunt.log.debug('Selenium server killed.');
+    }
 };
 
 var install = function install(grunt) {
