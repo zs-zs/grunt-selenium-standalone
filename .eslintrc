@@ -17,7 +17,7 @@
         "no-mixed-spaces-and-tabs": [2, "smart-tabs"],
         "camelcase": [2, {"properties": "never"}],
         "no-trailing-spaces": [1, { "skipBlankLines": true }],
-        "eol-last": false,
+        "eol-last": 0,
         "no-empty": [0]
     }
 }

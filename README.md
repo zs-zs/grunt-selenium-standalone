@@ -3,7 +3,7 @@
 > Grunt tasks for running a standalone Selenium server using the popular selenium-standalone package
 
 ## Getting Started
-This plugin requires Grunt `~0.4.5`
+This plugin requires Grunt `>=0.4.0`
 
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
@@ -30,16 +30,16 @@ grunt.initConfig({
       stopOnExit: true
     }
     your_target: {
-      seleniumVersion: '2.45.0',
+      seleniumVersion: '2.53.0',
       seleniumDownloadURL: 'http://selenium-release.storage.googleapis.com',
       drivers: {
         chrome: {
-          version: '2.15',
+          version: '2.21',
           arch: process.arch,
           baseURL: 'http://chromedriver.storage.googleapis.com'
         },
         ie: {
-          version: '2.45',
+          version: '2.53.0',
           arch: 'ia32',
           baseURL: 'http://selenium-release.storage.googleapis.com'
         }
