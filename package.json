@@ -1,12 +1,19 @@
 {
   "name": "grunt-selenium-standalone",
   "description": "Grunt tasks for running a standalone Selenium server using the popular selenium-standalone package",
-  "version": "0.1.2",
-  "homepage": "https://github.com/zs-zs/grunt-selenium-standalone",
+  "version": "1.0.0",
+  "license": "MIT",
   "author": {
     "name": "zs-zs",
     "email": "zsolt.zsigmondi@hotmail.com"
   },
+  "maintainers": [
+    {
+      "name": "James M. Greene",
+      "email": "james.m.greene@gmail.com",
+      "url": "http://greene.io/"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/zs-zs/grunt-selenium-standalone"
@@ -14,11 +21,14 @@
   "bugs": {
     "url": "https://github.com/zs-zs/grunt-selenium-standalone/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/zs-zs/grunt-selenium-standalone/blob/master/LICENSE-MIT"
-    }
+  "homepage": "https://github.com/zs-zs/grunt-selenium-standalone",
+  "keywords": [
+    "gruntplugin",
+    "selenium",
+    "webdriver",
+    "standalone",
+    "server",
+    "driverserver"
   ],
   "engines": {
     "node": ">= 0.10.0"
@@ -26,9 +36,6 @@
   "scripts": {
     "test": "grunt test"
   },
-  "keywords": [
-    "gruntplugin"
-  ],
   "peerDependencies": {
     "grunt": ">=0.4.0"
   },

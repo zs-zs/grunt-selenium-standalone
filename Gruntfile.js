@@ -2,7 +2,7 @@
  * grunt-selenium-standalone
  * https://github.com/zs-zs/grunt-selenium-standalone
  *
- * Copyright (c) 2015 zs-zs
+ * Copyright (c) 2015-2016 zs-zs
  * Licensed under the MIT license.
  */
 
