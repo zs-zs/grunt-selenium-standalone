@@ -19,8 +19,8 @@ function withSeleniumContext(grunt, performTask) {
 	if ( ssOptions.seleniumVersion ) {
 		ssOptions.version = ssOptions.seleniumVersion;
 	}
-	if ( ssOptions.seleniumBaseURL ) {
-		ssOptions.baseURL = ssOptions.seleniumBaseURL;
+	if ( ssOptions.seleniumDownloadURL ) {
+		ssOptions.baseURL = ssOptions.seleniumDownloadURL;
 	}
 	if ( !ssOptions.drivers ) {
 		ssOptions.drivers = {};
@@ -32,7 +32,7 @@ function withSeleniumContext(grunt, performTask) {
 	}
 
 	delete ssOptions.seleniumVersion;
-	delete ssOptions.seleniumBaseURL;
+	delete ssOptions.seleniumDownloadURL;
 
 	var done = this.async();
 	performTask.call(this, ssOptions)

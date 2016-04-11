@@ -75,5 +75,6 @@ grunt test
 
 ## Release History
 
+ - _1.0.1_: Fixed an issue with passing the `seleniumDownloadURL` config property through
  - _1.0.0_: Updates to better support option pass-through to the underlying `selenium-standalone` module
  - _0.1.0_: initial implementation. Commands: install, start, stop are implemented.
