@@ -1,25 +1,19 @@
 {
 	"chrome": {
 		"driver": {
+      "version": "77.0.3865.40",
 			"downloadURL": "http://chromedriver.storage.googleapis.com",
 			"config": {
 				"browserName": "chrome"
 			}
 		}
 	},
-	"phantomjs": {
+	"firefox": {
 		"driver": {
-			"downloadURL": "http://selenium-release.storage.googleapis.com",
+      "version": "0.25.0",
+			"downloadURL": "https://github.com/mozilla/geckodriver/releases",
 			"config": {
-				"browserName": "phantomjs"
-			}
-		}
-	},
-	"explorer": {
-		"driver": {
-			"downloadURL": "http://selenium-release.storage.googleapis.com",
-			"config": {
-				"browserName": "internet explorer"
+				"browserName": "chrome"
 			}
 		}
 	}
