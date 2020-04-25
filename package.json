@@ -37,17 +37,17 @@
     "test": "grunt test"
   },
   "peerDependencies": {
-    "grunt": ">=1.0.0"
+    "grunt": ">=1.1.0"
   },
   "dependencies": {
     "lodash.clonedeep": "^4.5.0",
     "q": "^1.5.1",
-    "selenium-standalone": "^6.16.0"
+    "selenium-standalone": "^6.17.0"
   },
   "devDependencies": {
     "grunt": ">=1.0.4",
-    "grunt-contrib-nodeunit": "^2.0.0",
+    "grunt-contrib-nodeunit": "^2.1.0",
     "grunt-eslint": "^22.0.0",
-    "wd": "^1.11.4"
+    "wd": "^1.12.1"
   }
 }
