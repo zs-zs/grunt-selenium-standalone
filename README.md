@@ -3,7 +3,7 @@
 > Grunt tasks for running a standalone Selenium server using the popular selenium-standalone package
 
 ## Getting Started
-This plugin requires Grunt `>=0.4.0`
+This plugin requires Grunt `>=1.0.0`
 
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
@@ -30,16 +30,31 @@ grunt.initConfig({
       stopOnExit: true
     }
     your_target: {
-      seleniumVersion: '2.53.0',
+      seleniumVersion: '3.141.59',
       seleniumDownloadURL: 'http://selenium-release.storage.googleapis.com',
       drivers: {
         chrome: {
-          version: '2.21',
+          version: '81.0.4044.69',
           arch: process.arch,
           baseURL: 'http://chromedriver.storage.googleapis.com'
         },
+        firefox: {
+          version: '0.26.0',
+          arch: process.arch,
+          baseURL: 'https://github.com/mozilla/geckodriver/releases'
+        },
+        safari: {
+          version: '2.48',
+          arch: process.arch,
+          baseURL: 'https://selenium-release.storage.googleapis.com'
+        },
+        edge: {
+          version: '6.17134',
+          arch: 'ia32',
+          baseURL: 'https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/'
+        },
         ie: {
-          version: '2.53.0',
+          version: '3.150',
           arch: 'ia32',
           baseURL: 'http://selenium-release.storage.googleapis.com'
         }
@@ -69,8 +84,15 @@ For each target, you can specify if the selenium server should stop automaticall
 
 ### Run tests
 
+With Chrome:
+
 ```js
 grunt test
+```
+With Firefox:
+
+```js
+BROWSER=firefox grunt test
 ```
 
 ## Release History

@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 
 	var testDrivers = {};
 	Object.keys(automatedBrowsers).forEach(function(browserName) {
-		var automationConfig = automatedBrowsers[browserName];
+		var automationConfig = automatedBrowsers[browserName].driver;
 		testDrivers[browserName] = {
 			version: automationConfig.version,
 			arch: process.arch,
@@ -29,7 +29,7 @@ module.exports = function(grunt) {
 		// Configuration to run the tests
 		'selenium_standalone': {
 			testConfig: {
-				seleniumVersion: '2.53.0',
+				seleniumVersion: '3.141.59',
 				seleniumDownloadURL: 'http://selenium-release.storage.googleapis.com',
 				drivers: testDrivers
 			}
