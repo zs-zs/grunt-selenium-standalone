@@ -13,7 +13,6 @@
         "quotes": [2, "single"],
         "no-use-before-define": 2,
         "indent": [2, "tab"],
-        "linebreak-style": [1, "windows"],
         "no-mixed-spaces-and-tabs": [2, "smart-tabs"],
         "camelcase": [2, {"properties": "never"}],
         "no-trailing-spaces": [1, { "skipBlankLines": true }],
