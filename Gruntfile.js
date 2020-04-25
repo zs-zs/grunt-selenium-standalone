@@ -29,7 +29,7 @@ module.exports = function(grunt) {
 		// Configuration to run the tests
 		'selenium_standalone': {
 			testConfig: {
-				seleniumVersion: '3.141.5',
+				seleniumVersion: '3.141.59',
 				seleniumDownloadURL: 'http://selenium-release.storage.googleapis.com',
 				drivers: testDrivers
 			}

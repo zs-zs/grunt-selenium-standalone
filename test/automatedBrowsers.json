@@ -1,7 +1,7 @@
 {
 	"chrome": {
 		"driver": {
-      "version": "77.0.3865.40",
+      "version": "81.0.4044.69",
 			"downloadURL": "http://chromedriver.storage.googleapis.com",
 			"config": {
 				"browserName": "chrome"
@@ -10,10 +10,10 @@
 	},
 	"firefox": {
 		"driver": {
-      "version": "0.25.0",
+      "version": "0.26.0",
 			"downloadURL": "https://github.com/mozilla/geckodriver/releases",
 			"config": {
-				"browserName": "chrome"
+				"browserName": "firefox"
 			}
 		}
 	}

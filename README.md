@@ -30,16 +30,16 @@ grunt.initConfig({
       stopOnExit: true
     }
     your_target: {
-      seleniumVersion: '3.141.5',
+      seleniumVersion: '3.141.59',
       seleniumDownloadURL: 'http://selenium-release.storage.googleapis.com',
       drivers: {
         chrome: {
-          version: '77.0.3865.40',
+          version: '81.0.4044.69',
           arch: process.arch,
           baseURL: 'http://chromedriver.storage.googleapis.com'
         },
         firefox: {
-          version: '0.25.0',
+          version: '0.26.0',
           arch: process.arch,
           baseURL: 'https://github.com/mozilla/geckodriver/releases'
         },
@@ -84,8 +84,15 @@ For each target, you can specify if the selenium server should stop automaticall
 
 ### Run tests
 
+With Chrome:
+
 ```js
 grunt test
+```
+With Firefox:
+
+```js
+BROWSER=firefox grunt test
 ```
 
 ## Release History
